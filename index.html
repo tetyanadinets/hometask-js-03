@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		;(function(){
+			function simpleNumbers(min, max){
+				if( ( min>max ) ||
+					(min != parseInt(min, 10)) ||
+					(max != parseInt(max, 10)) )  {
+					return null;
+				} else {
+					 var result = "";
+
+					 for ( i = min; i <= max; i++){
+					 	for ( k = 2; k <= i; k++){
+					 		if ( k == i){
+					 			result += k + "; ";
+					 		} else if ( i%k == 0 ){
+					 			break;
+					 		} else {
+					 			continue;
+					 		}
+					 	}
+					 }
+					 return result;
+				}
+
+			}
+
+			var min = Number(prompt("Please input min number", "0"));
+			var max = Number(prompt("Please input max number", "0"));
+
+			alert(simpleNumbers(min, max));
+
+		})()
+
+	</script>
+</body>
+</html>
